@@ -11,6 +11,8 @@ body {
     background-color: midnightblue;
     font-family: "montserrat";
     font-size: 1.1em;
+    margin: 0px;
+    min-height: 100vh;
 }
 
 .index {
@@ -23,24 +25,31 @@ body {
     justify-content: space-around;
     flex-direction: row;
     font-family: "youngserif";
-    position: sticky;
+    position: fixed;
     background-color: midnightblue;
+    min-width: 100vw;
+    
+}
+.pagecontent{
+    padding-top:10vh;
+    padding-bottom: 10vh;
 }
 .navbar > * {
-    margin-top: 0.5%;
+    margin-top: 0.5vh;
     margin-bottom: 0.5%;
+    font-size: 1.5em
 }
 .selected{
     background-color:midnightblue;
     padding: .5em 1em;
-    border-radius: 10%;
+    border-radius: 15px;
     border: solid white;
     color: white;
 }
 .link{
     background-color:peachpuff;
     padding: .5em 1em;
-    border-radius: 10%;
+    border-radius: 15px;
     border: solid black;
     color: black;
     text-decoration: none;
@@ -51,13 +60,6 @@ body {
     color:white;
     background-color: midnightblue;
     border-color: white;
-}
-#profile {
-    animation: fadeIn 2s;
-    display:flex;
-    justify-content: center;
-    margin-top: 2vw;
-    
 }
 #profile>img {
     max-width: 20%;
@@ -79,8 +81,8 @@ body {
     100% {opacity: 1;}
 }
 @keyframes fade-out {
-    from { opacity: 1 }
-      to { opacity: 0 }
+    0% { opacity: 1 }
+    100% { opacity: 0 }
 }
 
 .aboutmepage{
@@ -88,18 +90,7 @@ body {
     flex-direction: column;
 
 }
-.bio{
-    animation: fadeIn 2s;
-    display:flex; 
-    flex-direction: column;
-    background-color: peachpuff;
-    padding: 2%;
-    margin: 0 auto;
-    margin-top: 2vw;
-    max-width: 50vw;
-    border-radius: 50px;
-    border: solid black 3px;
-}
+
 h1{
     font-family: "youngserif";
 }
@@ -109,13 +100,7 @@ div.bio {
 
 }
 
-.experience{
-    margin-left: 2%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeIn 2s;
-}
+
 .intro{
     background-color: peachpuff;
     max-width: 50%;
@@ -153,7 +138,57 @@ div.bio {
     display:flex;
     flex-direction: column;
     align-items: center;
-    animation: fadeIn 2s;    
+    animation: fadeIn 1s; 
+    transition: opacity 1s ease;
+    opacity: 1;   
+}
+.experience{
+    margin-left: 2%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s; 
+    transition: opacity 1s ease;
+    opacity: 1; 
+}
+.bio{
+    display:flex; 
+    flex-direction: column;
+    background-color: peachpuff;
+    padding: 2%;
+    margin: 0 auto;
+    margin-top: 2vw;
+    max-width: 50vw;
+    border-radius: 50px;
+    border: solid black 3px;
+    animation: fadeIn 1s; 
+    transition: opacity 1s ease;
+    opacity: 1; 
+}
+.bio.pagecontent {
+    margin-top: 12vh;
+}
+
+#profile {
+    display:flex;
+    justify-content: center;
+    margin-top: 2vw;
+    padding-top: 10vh;
+    animation: fadeIn 1s; 
+    transition: opacity 1s ease;
+    opacity: 1; 
+}
+#profile.fadeout{
+    opacity: 0;
+}
+.portfolio.fadeout{
+    opacity: 0;
+}
+.experience.fadeout{
+    opacity:0;
+}
+.bio.fadeout{
+    opacity: 0;
 }
 .intro > * {
     padding: 0px 3%;
@@ -174,4 +209,16 @@ div.bio {
 .projects > img {
     border-radius: 5px;
 }
-/*
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-width: 100vw;
+    background-color: peachpuff;
+    border-top: black solid;
+    margin-top: auto;
+    text-align: center;
+    padding-bottom: 1vh;
+}
+
